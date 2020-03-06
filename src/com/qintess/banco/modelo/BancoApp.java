@@ -22,8 +22,8 @@ public class BancoApp {
 		System.out.println(contapoupanca.pegarSaldo());
 		
 		// sacar dinheiro da conta corrente
-		contacorrente.sacarDinheiro(500);
-		contacorrente.sacarDinheiro(300);
+		contacorrente.sacarDinheiro(500); // erro no saque
+		contacorrente.sacarDinheiro(300); 
 		System.out.println(contacorrente.pegarSaldo()); 
 		
 		//sacar dinheiro da conta poupança 
