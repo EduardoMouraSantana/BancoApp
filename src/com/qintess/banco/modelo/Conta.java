@@ -60,9 +60,10 @@ public class Conta {
 	}
 	
 	public void transferir(Conta remetente, Conta destinatario, int valor) {
-		if(remetente.getSaldo()>=valor) {
+		System.out.println("Existe uma taxa de R$4 para realizar transferências");
+		if(remetente.getSaldo()>=valor+4) {
 			destinatario.setSaldo(destinatario.getSaldo()+valor);
-			remetente.setSaldo(remetente.getSaldo()-valor);
+			remetente.setSaldo(remetente.getSaldo()-valor-4);
 		}
 		else 
 			System.out.println("Não é possível transferir esse valor");
