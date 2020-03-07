@@ -5,7 +5,7 @@ public class ContaCorrente extends Conta{
 	public ContaCorrente(int _agencia, int _numero, double _saldo,
 			Cliente _cliente, double limite) {
 		super(_agencia, _numero, _saldo + limite, _cliente);
-		
+		setLimite(limite);
 	}
 	public void setSaldo(double saldo) {
 		super.setSaldo(saldo + this.limite);
@@ -33,7 +33,7 @@ public class ContaCorrente extends Conta{
 				System.out.println("Só é possível sacar até R$300,00");
 			else{
 				if(valor>getSaldo()-limite){
-					setCreditoEspecial(valor-getSaldo());
+					setCreditoEspecial(-(valor-getSaldo()));
 					limite -= creditoespecial;
 					super.sacarDinheiro(valor);	
 					setSaldo(getSaldo()-2);
